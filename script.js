@@ -67,6 +67,70 @@ if (heroTitle) {
   });
 }
 
+const faqItems = document.querySelectorAll(".faq-premium-item");
+faqItems.forEach((item) => {
+  const btn = item.querySelector(".faq-premium-btn");
+  btn.addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+    faqItems.forEach((i) => i.classList.remove("active"));
+    if (!isActive) {
+      item.classList.add("active");
+    }
+  });
+});
+
 if (window.lucide && typeof window.lucide.createIcons === "function") {
   window.lucide.createIcons();
+}
+
+// Exit Intent Popup Logic
+const exitPopup = document.getElementById("exitPopup");
+const closeExitPopup = document.getElementById("closeExitPopup");
+const exitForm = document.getElementById("exitIntentForm");
+
+let popupShown = sessionStorage.getItem("exitPopupShown");
+
+function showPopup() {
+  if (!popupShown && exitPopup) {
+    exitPopup.classList.add("show");
+    exitPopup.setAttribute("aria-hidden", "false");
+    popupShown = "true";
+    sessionStorage.setItem("exitPopupShown", "true");
+  }
+}
+
+// Trigger: Mouse leave (Desktop)
+document.addEventListener("mouseleave", (e) => {
+  if (e.clientY <= 0) {
+    showPopup();
+  }
+});
+
+// Trigger: Inactivity (Mobile/General)
+let inactivityTimer = setTimeout(showPopup, 40000);
+
+document.addEventListener("touchstart", () => {
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(showPopup, 40000);
+});
+
+// Close logic
+if (closeExitPopup) {
+  closeExitPopup.addEventListener("click", () => {
+    exitPopup.classList.remove("show");
+    exitPopup.setAttribute("aria-hidden", "true");
+  });
+}
+
+// Submission
+if (exitForm) {
+  exitForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("exitEmail").value;
+    // Redirect to the existing Google Form link
+    // We could potentially pre-fill the email if we had the entry ID
+    window.open(`https://docs.google.com/forms/d/e/1FAIpQLSfGMRppIDrNSxMFimTY36i_5dtEatN3WIS1Sr7OMrAQPfGAdA/viewform?usp=dialog`, "_blank");
+    exitPopup.classList.remove("show");
+    exitPopup.setAttribute("aria-hidden", "true");
+  });
 }
