@@ -329,11 +329,11 @@ p {
 
 .hero-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(42px, 8vw, 84px);
-  line-height: 0.95;
+  font-size: clamp(40px, 9vw, 84px);
+  line-height: 1.05;
   font-weight: 800;
   margin-bottom: 24px;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
@@ -1419,23 +1419,24 @@ p {
 
 .reveal-section,
 .reveal {
-  opacity: 1 !important; /* Force visibility */
-  transform: none !important;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
-/* Re-enable animations only for large screens where scroll events are reliable */
-@media (min-width: 1025px) {
-  .reveal:not(.in-view),
-  .reveal-section:not(.in-view) {
-    opacity: 0 !important;
-    transform: translateY(30px) scale(0.98) !important;
-  }
-  
-  .reveal.in-view,
-  .reveal-section.in-view {
-    opacity: 1 !important;
-    transform: translateY(0) scale(1) !important;
+.reveal.in-view,
+.reveal-section.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Impactful animations for mobile */
+@media (max-width: 768px) {
+  .reveal-section,
+  .reveal {
+    transition-duration: 0.8s;
+    transform: translateY(30px) scale(1);
   }
 }
 
@@ -1549,7 +1550,7 @@ p {
   }
 
   .hero {
-    padding-top: 160px; /* Added extra clearance for floating navbar */
+    padding-top: 180px; /* Further increased clearance */
   }
 
   .container {
@@ -1557,6 +1558,8 @@ p {
   }
 
   .hero-title {
-    font-size: 42px;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
   }
 }
