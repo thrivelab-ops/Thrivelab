@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selected Work — ThriveLab Digital Design Studio</title>
+  <meta name="description"
+    content="Explore the full portfolio of website builds, digital identity systems, and local visibility projects crafted by ThriveLab Studio.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thrivelab.co.in/work">
+
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;700&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- HEADER / NAVIGATION -->
+  <header class="site-header scrolled" id="top">
+    <div class="container nav-inner">
+      <a class="wordmark" href="index.html" aria-label="ThriveLab Homepage">
+        THR<span class="logo-dot-i">I</span>VELAB<span class="logo-dot-end">.</span>
+      </a>
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#system">The System</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="btn btn-primary btn-sm nav-cta"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfGMRppIDrNSxMFimTY36i_5dtEatN3WIS1Sr7OMrAQPfGAdA/viewform?usp=dialog"
+          target="_blank" rel="noopener">
+          Get Free Audit
+          <i data-lucide="arrow-right" class="mini-arrow" aria-hidden="true"></i>
+        </a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"
+        aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <aside class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="index.html#system" class="mobile-link">The System</a>
+        <a href="index.html#process" class="mobile-link">Process</a>
+        <a href="index.html#pricing" class="mobile-link">Pricing</a>
+      </nav>
+      <a class="btn btn-primary nav-cta-mobile"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfGMRppIDrNSxMFimTY36i_5dtEatN3WIS1Sr7OMrAQPfGAdA/viewform?usp=dialog"
+        target="_blank" rel="noopener">
+        Get Free Audit →
+      </a>
+    </aside>
+  </header>
+
+  <main style="padding-top: 140px; min-height: 85vh;">
+    <section class="section">
+      <div class="container">
+        <div style="margin-bottom: 60px;">
+          <span class="section-tag">THRIVELAB STUDIO PORTFOLIO</span>
+          <h1 class="section-title" style="font-size: clamp(2.5rem, 5vw, 4.25rem); max-width: 900px;">
+            Every website is built to make a business look as good online as it is offline.
+          </h1>
+          <p class="section-subtitle">
+            Explore our complete archive of website builds, design concepts, and digital identity systems across beauty, retail, healthcare, and professional services.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="portfolio-filters" id="workPageFilters" style="margin-bottom: 48px;">
+          <button class="filter-btn active" data-category="ALL">ALL WORK</button>
+          <button class="filter-btn" data-category="BEAUTY & WELLNESS">BEAUTY & WELLNESS</button>
+          <button class="filter-btn" data-category="HOSPITALITY & DINING">HOSPITALITY & DINING</button>
+          <button class="filter-btn" data-category="RETAIL & LIFESTYLE">RETAIL & LIFESTYLE</button>
+          <button class="filter-btn" data-category="HEALTH & CLINICAL">HEALTH & CLINICAL</button>
+          <button class="filter-btn" data-category="PROFESSIONAL SERVICES">PROFESSIONAL SERVICES</button>
+        </div>
+
+        <!-- All Projects Grid -->
+        <div class="secondary-projects-grid" id="allProjectsGrid" style="grid-template-columns: repeat(2, 1fr); gap: 36px;">
+          <!-- Populated from projects.js -->
+        </div>
+
+        <div style="margin-top: 80px; text-align: center;">
+          <a href="index.html" class="btn btn-ghost">← Back to Homepage</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="wordmark">
+        THR<span class="logo-dot-i">I</span>VELAB<span class="logo-dot-end">.</span>
+        <span style="font-size: 0.8125rem; font-weight: 400; color: var(--text-muted); margin-left: 12px;">© 2026 ThriveLab Studio</span>
+      </div>
+      <div>
+        <a href="mailto:hello@thrivelab.co.in" style="color: var(--text-secondary); margin-right: 16px;">hello@thrivelab.co.in</a>
+        <a href="tel:+919494920158" style="color: var(--text-secondary);">+91 94949 20158</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIVE PROJECT PREVIEW MODAL -->
+  <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="dot" style="background-color: var(--accent-lime);"></span>
+          <h3 class="modal-title" id="modalTitle">Project Title</h3>
+          <span id="modalUrlText" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">domain.vercel.app</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="modal-device-toggles">
+            <button class="device-btn active" id="deviceDesktopBtn">DESKTOP</button>
+            <button class="device-btn" id="deviceMobileBtn">MOBILE</button>
+          </div>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" id="modalExternalLink" style="padding: 6px 12px; font-size: 0.75rem;">
+            Open Live Site ↗
+          </a>
+          <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe-wrap desktop" id="modalIframeWrap">
+          <iframe id="modalIframe" class="modal-iframe" src="about:blank" title="Live Project Preview" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="projects.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
