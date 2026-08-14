@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Render Digital Design Exhibition (4 Art-Directed Compositions)
+  // 3. Render Digital Design Exhibition (5 Art-Directed Compositions)
   const featuredContainer = document.getElementById("featuredShowcaseContainer");
   if (featuredContainer && typeof THRIVELAB_FEATURED_PROJECTS !== "undefined") {
-    const [salonz, dnd, deStudio, tbc] = THRIVELAB_FEATURED_PROJECTS;
+    const [salonz, dnd, deStudio, tbc, paakashala] = THRIVELAB_FEATURED_PROJECTS;
 
     function renderViewportHTML(project) {
       const displayDomain = project.url.replace("https://", "").replace("/", "");
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="showcase-hero-header">
             <div>
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <span class="showcase-num-tag">01 / 04</span>
+                <span class="showcase-num-tag">01 / 05</span>
                 <span class="showcase-category-badge">${salonz.category}</span>
               </div>
               <h3 class="showcase-title-lg">${salonz.title}</h3>
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       exhibitionHTML += `
         <article class="project-showcase showcase-split-layout reveal" id="showcase-${dnd.id}">
           <div class="showcase-split-info">
-            <span class="showcase-num-tag">02 / 04</span>
+            <span class="showcase-num-tag">02 / 05</span>
             <span class="showcase-category-badge" style="align-self: flex-start;">${dnd.category}</span>
             <h3 style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em;">${dnd.title}</h3>
             <p style="font-size: 1rem; color: var(--text-secondary); font-style: italic;">"${dnd.tagline}"</p>
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="showcase-gallery-meta">
             <div>
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-                <span class="showcase-num-tag">03 / 04</span>
+                <span class="showcase-num-tag">03 / 05</span>
                 <span class="showcase-category-badge">${deStudio.category}</span>
               </div>
               <h3 style="font-size: 2.75rem; font-weight: 800; letter-spacing: -0.03em;">${deStudio.title}</h3>
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <article class="project-showcase showcase-architectural-layout reveal" id="showcase-${tbc.id}">
           <div class="showcase-architectural-header">
             <div>
-              <span class="showcase-num-tag">04 / 04 — ${tbc.category}</span>
+              <span class="showcase-num-tag">04 / 05 — ${tbc.category}</span>
               <h3 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 4px;">${tbc.title}</h3>
               <p style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 4px;">"${tbc.tagline}"</p>
             </div>
@@ -174,6 +174,35 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
           ${renderViewportHTML(tbc)}
+        </article>
+      `;
+    }
+
+    // COMPOSITION 05: PAAKASHALA — HOSPITALITY & DINING EXHIBITION
+    if (paakashala) {
+      exhibitionHTML += `
+        <article class="project-showcase showcase-hero-layout reveal" id="showcase-${paakashala.id}">
+          <div class="showcase-hero-header">
+            <div>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span class="showcase-num-tag">05 / 05</span>
+                <span class="showcase-category-badge">${paakashala.category}</span>
+              </div>
+              <h3 class="showcase-title-lg">${paakashala.title}</h3>
+              <p style="font-size: 1.125rem; color: var(--text-secondary); margin-top: 8px; font-weight: 300;">"${paakashala.tagline}"</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+              <div class="frame-toggle">
+                <button class="toggle-btn active" data-id="${paakashala.id}" data-mode="desktop">DESKTOP</button>
+                <button class="toggle-btn" data-id="${paakashala.id}" data-mode="mobile">MOBILE</button>
+              </div>
+              <a href="${paakashala.url}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                VIEW LIVE SITE ↗
+              </a>
+            </div>
+          </div>
+          <p style="font-size: 0.9375rem; color: var(--text-secondary); max-width: 780px; line-height: 1.6;">${paakashala.description}</p>
+          ${renderViewportHTML(paakashala)}
         </article>
       `;
     }

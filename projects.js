@@ -53,6 +53,18 @@ const THRIVELAB_FEATURED_PROJECTS = [
     services: "Brand Positioning · Mobile Design · Service Architecture",
     description: "Executive barbershop interface engineered for instant walk-in clarity, membership presentation, and effortless mobile booking.",
     accentColor: "#C59B27"
+  },
+  {
+    id: "paakashala",
+    number: "05",
+    title: "PAAKASHALA",
+    subtitle: "Artisanal Culinary & Event Catering",
+    tagline: "Heritage flavors presented with modern hospitality poise.",
+    category: "HOSPITALITY & DINING",
+    url: "https://paakashala-three.vercel.app/",
+    services: "Culinary Brand · Event Booking · Menu Architecture",
+    description: "An elegant digital showcase for an artisanal catering and culinary experience studio. Engineered for high-conversion event inquiries.",
+    accentColor: "#D48C46"
   }
 ];
 
